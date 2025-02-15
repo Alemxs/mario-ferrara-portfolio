@@ -1,0 +1,574 @@
+/* RESET BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+/* HEADER */
+header {
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s ease-in-out, background 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Quando si scorre in basso, l'header si nasconde */
+header.hidden {
+    top: -90px;
+}
+
+/* LOGO */
+.logo a {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f39c12;
+    text-decoration: none;
+}
+
+/* SELETTORE LINGUA (Centrato Perfettamente in Altezza) */
+.language-switch {
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.language-switch a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: color 0.3s ease-in-out;
+}
+
+.language-switch a.active {
+    color: #f39c12;
+}
+
+.language-switch a:hover {
+    color: #f39c12;
+}
+
+
+/* NAVBAR */
+/* NAVBAR - Centrata e Pulita */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Effetto hover con underline animato */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #f39c12;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+
+
+/* RESPONSIVE HEADER */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
+/* HERO SECTION */
+#hero {
+    text-align: center;
+    padding: 150px 20px;
+    color: white;
+    background: url('sfondo.jpeg') center/cover no-repeat fixed;
+    background-position: center 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#hero h2 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #f39c12;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #e67e22;
+    transform: scale(1.1);
+}
+
+/* SEZIONI GALLERY */
+.gallery {
+    display: grid;
+    gap: 25px;
+    padding: 50px 20px;
+    justify-content: center;
+}
+
+/* Design Sezioni */
+#collezione-estiva, #contrasti, #eleganza-sportiva {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+#collezione-estiva .container,
+#contrasti .container,
+#eleganza-sportiva .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ✅ Nuovo layout per la Collezione Estiva */
+#collezione-estiva .container {
+    display: flex;
+    justify-content: space-between; /* Allinea le immagini e il testo in orizzontale */
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ✅ Immagini Look 1 e Look 2 */
+#collezione-estiva .gallery-item {
+    width: 30%; /* Imposta la larghezza delle immagini */
+    max-width: 300px;
+}
+
+/* ✅ Testo tra le immagini */
+#collezione-estiva .text-between {
+    width: 35%;
+    font-size: 18px;
+    color: #222;
+    padding: 10px;
+}
+
+.images {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.text {
+    flex: 1;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.text h2 {
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* ✅ Effetto hover sulle immagini */
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    .images {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .gallery-item {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    #collezione-estiva .container,
+    #contrasti .container,
+    #eleganza-sportiva .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text {
+        padding: 0;
+    }
+
+    /* ✅ Modifica per rendere il layout verticale su mobile */
+    #collezione-estiva .container {
+        flex-direction: column; /* Mette immagini e testo in colonna */
+    }
+
+    #collezione-estiva .gallery-item,
+    #collezione-estiva .text-between {
+        width: 100%; /* Immagini e testo occupano tutta la larghezza */
+    }
+    #contrasti .text,
+    #eleganza-sportiva .text{
+        margin-bottom: 40px; /* Aggiunge spazio sotto il testo */
+    }
+    #eleganza-sportiva .container{
+        display: flex;
+        flex-direction: column-reverse; /* Inverte l'ordine: testo sopra, immagini sotto */
+    }
+}
+
+
+
+
+
+
+
+
+/* Sezione Camicie Su Misura con sfondo e immagine */
+#su-misura {
+    background: url('sfondo-su-misura.jpeg') center/cover no-repeat; /* Aggiungi l'immagine di sfondo */
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+#su-misura .container {
+    display: flex;
+    justify-content: space-between; /* Distribuisce il testo e l'immagine in orizzontale */
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.su-misura-intro {
+    flex: 1;
+    margin-right: 20px; /* Distanza tra il testo e l'immagine */
+}
+
+/* Titolo con colore simile a quello della galleria */
+.su-misura-intro h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222; /* Colore delle scritte in galleria */
+}
+
+/* Paragrafo con colore simile a quello della galleria */
+.su-misura-intro p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #555; /* Colore delle scritte in galleria */
+}
+
+.su-misura-image {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centra l'immagine orizzontalmente */
+}
+
+.su-misura-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Pulsante con miglior contrasto */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #f39c12; /* Colore più visibile del pulsante */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombra leggera per il pulsante */
+}
+
+.btn:hover {
+    background: #e67e22; /* Colore del pulsante quando è in hover */
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #su-misura .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .su-misura-intro {
+        margin-right: 0; /* Rimuove il margine quando si va su mobile */
+    }
+
+    .su-misura-image img {
+        max-width: 80%; /* Rende l'immagine più piccola su mobile */
+    }
+}
+
+
+/* Sezione Processo Sartoriale */
+#processo {
+    padding: 80px 20px;
+    background-color: #f9f9f9; /* Colore di sfondo più chiaro e uniforme */
+    text-align: center;
+}
+
+#processo h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #222; /* Colore del titolo più scuro per miglior contrasto */
+}
+
+.processo-steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.step {
+    max-width: 300px;
+    text-align: center;
+}
+
+.step h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f39c12; /* Colore dorato per il titolo della fase */
+    margin-bottom: 15px;
+}
+
+.step p {
+    font-size: 16px;
+    color: #555; /* Colore del testo per una leggibilità ottimale */
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Aggiunto effetto hover per ingrandire l'immagine */
+}
+
+/* Responsive Design per dispositivo mobile */
+@media (max-width: 768px) {
+    .processo-steps {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+/* FOOTER MODERNO E CENTRATO */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+    gap: 50px;
+}
+
+/* SEZIONI DEL FOOTER */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* TITOLI */
+.footer-section h3 {
+    font-size: 20px;
+    color: #f39c12;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* TESTO E LINK */
+.footer-section p, .footer-section a {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f39c12;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 22px;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #f39c12;
+    transform: scale(1.1);
+}
+
+/* LINEA FINALE COPYRIGHT */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
