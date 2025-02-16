@@ -13,7 +13,6 @@ body {
 }
 
 /* HEADER */
-/* HEADER */
 header {
     background: rgba(0, 0, 0, 0.85);
     color: white;
@@ -70,7 +69,6 @@ header.hidden {
 
 
 /* NAVBAR */
-/* NAVBAR - Centrata e Pulita */
 nav ul {
     list-style: none;
     display: flex;
@@ -108,22 +106,6 @@ nav ul li a:hover::after {
 
 nav ul li a:hover {
     color: #f39c12;
-}
-
-
-
-/* RESPONSIVE HEADER */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
 }
 
 
@@ -285,56 +267,6 @@ nav ul li a:hover {
     border-radius: 8px;
 }
 
-/* ✅ Responsive Design */
-@media (max-width: 768px) {
-    .images {
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-
-    .gallery-item {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    #collezione-estiva .container,
-    #contrasti .container,
-    #eleganza-sportiva .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .text {
-        padding: 0;
-    }
-
-    /* ✅ Modifica per rendere il layout verticale su mobile */
-    #collezione-estiva .container {
-        flex-direction: column; /* Mette immagini e testo in colonna */
-    }
-
-    #collezione-estiva .gallery-item,
-    #collezione-estiva .text-between {
-        width: 100%; /* Immagini e testo occupano tutta la larghezza */
-    }
-    #contrasti .text,
-    #eleganza-sportiva .text{
-        margin-bottom: 40px; /* Aggiunge spazio sotto il testo */
-    }
-    #eleganza-sportiva .container{
-        display: flex;
-        flex-direction: column-reverse; /* Inverte l'ordine: testo sopra, immagini sotto */
-    }
-}
-
-
-
-
-
-
-
-
 /* Sezione Camicie Su Misura con sfondo e immagine */
 #su-misura {
     background: url('sfondo-su-misura.jpeg') center/cover no-repeat; /* Aggiungi l'immagine di sfondo */
@@ -406,23 +338,6 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    #su-misura .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .su-misura-intro {
-        margin-right: 0; /* Rimuove il margine quando si va su mobile */
-    }
-
-    .su-misura-image img {
-        max-width: 80%; /* Rende l'immagine più piccola su mobile */
-    }
-}
-
-
 /* Sezione Processo Sartoriale */
 #processo {
     padding: 80px 20px;
@@ -474,22 +389,7 @@ nav ul li a:hover {
     transform: scale(1.05); /* Aggiunto effetto hover per ingrandire l'immagine */
 }
 
-/* Responsive Design per dispositivo mobile */
-@media (max-width: 768px) {
-    .processo-steps {
-        flex-direction: column;
-        gap: 30px;
-    }
-}
-
-
-
-
-
-
-
-
-/* FOOTER MODERNO E CENTRATO */
+/* FOOTER */
 footer {
     background-color: #1a1a1a;
     color: white;
@@ -562,6 +462,99 @@ footer {
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
+
+    /* Header */
+    header .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Hero Section */
+    #hero {
+        padding: 120px 20px;
+    }
+
+    /* Sezioni Galleria */
+    .images {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .gallery-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #collezione-estiva .container,
+    #contrasti .container,
+    #eleganza-sportiva .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text {
+        padding: 0;
+    }
+
+    #collezione-estiva .container {
+        flex-direction: column;
+    }
+
+    #collezione-estiva .gallery-item,
+    #collezione-estiva .text-between {
+        width: 100%;
+    }
+
+    #contrasti .text,
+    #eleganza-sportiva .text {
+        margin-bottom: 40px;
+    }
+
+    #eleganza-sportiva .container {
+        flex-direction: column-reverse;
+    }
+
+    /* Sezione Camicie Su Misura */
+    #su-misura .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .su-misura-intro {
+        margin-right: 0;
+    }
+
+    .su-misura-image img {
+        max-width: 80%;
+    }
+
+    #su-misura .btn {
+        margin-bottom: 30px;
+    }
+
+    /* Processo Sartoriale */
+    .processo-steps {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .step {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    /* Footer */
     .footer-container {
         flex-direction: column;
         text-align: center;
